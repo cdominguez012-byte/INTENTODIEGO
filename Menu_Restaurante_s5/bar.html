@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+<nav class="navbar navbar-dark bg-dark px-3">
+  <a class="navbar-brand" href="#">Bar La Noche</a>
+  <button class="btn btn-outline-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
+    ☰ Menú
+  </button>
+</nav>
+
+<!-- Offcanvas -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">Menú</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="list-unstyled">
+      <li><a href="#" class="text-decoration-none">Inicio</a></li>
+      <li><a href="#" class="text-decoration-none">Sobre Nosotros</a></li>  
+      <li><a href="#" class="text-decoration-none">Promociones</a></li>
+      <li><a href="#" class="text-decoration-none">Contacto</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Contenido principal -->
+<div class="container mt-4">
+
+  <!-- Navs (categorías) -->
+  <ul class="nav nav-tabs" id="bebidasTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="cocteles-tab" data-bs-toggle="tab" data-bs-target="#cocteles" type="button" role="tab">Cócteles</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="cervezas-tab" data-bs-toggle="tab" data-bs-target="#cervezas" type="button" role="tab">Cervezas</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="vinos-tab" data-bs-toggle="tab" data-bs-target="#vinos" type="button" role="tab">Vinos</button>
+    </li>
+  </ul>
+ <!-- Tabs Content -->
+  <div class="tab-content mt-3" id="bebidasTabContent">
+
+    <!-- Cócteles -->
+    <div class="tab-pane fade show active" id="cocteles" role="tabpanel">
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between">Mojito <span>$8.00</span></li>
+        <li class="list-group-item d-flex justify-content-between">Caipirinha <span>$7.50</span></li>
+        <li class="list-group-item d-flex justify-content-between">Piña Colada <span>$9.00</span></li>
+        <li class="list-group-item d-flex justify-content-between">Alfonso XIII <span>$10.00</span></li>
+        <li class="list-group-item d-flex justify-content-between">Margarita <span>$9.50</span></li>
+        <li class="list-group-item d-flex justify-content-between">Mezcalita <span>$11.00</span></li>
+      </ul>
+    </div>
+
+    <!-- Cervezas -->
+    <div class="tab-pane fade" id="cervezas" role="tabpanel">
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between">Heineken <span>$5.00</span></li>
+        <li class="list-group-item d-flex justify-content-between">Corona <span>$4.50</span></li>
+        <li class="list-group-item d-flex justify-content-between">Stella Artois <span>$6.00</span></li>
+      </ul>
+    </div>
+
+    <!-- Vinos -->
+    <div class="tab-pane fade" id="vinos" role="tabpanel">
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between">Vino Tinto Reserva <span>$12.00</span></li>
+        <li class="list-group-item d-flex justify-content-between">Vino Blanco Seco <span>$10.00</span></li>
+        <li class="list-group-item d-flex justify-content-between">Rosado Frutal <span>$11.00</span></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+<a href="menu_bootstrap.html"><button class="btn btn-info">Regresa a nuestro menú del Restaurant</button></a>
+<a href="pedido.html"><button class="btn btn-secundary">Realiza tu pedido</button></a>
+
+<!-- Música de fondo -->
+  <audio autoplay loop>
+    <source src="audio/bar.mpeg" type="audio/mpeg">
+    Tu navegador no soporta el elemento de audio.
+  </audio>
+
+<script src="js/bootstrap.bundle.min.js"></script>  
+</body>
+</html>
+

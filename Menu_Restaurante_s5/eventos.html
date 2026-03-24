@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<button onclick="miFuncion()">
+Click aquí
+</button>  
+
+<form onsubmit="return validarFormulario()">
+<input type="text" required>
+<input type="submit" value="Enviar">
+</form>
+
+<div onmouseover="cambiarColor()">
+Pasa el ratón por aquí
+</div>
+
+<select id="miSelect" onchange="mostrarSeleccion()">
+    <option value="">--Elige una opción--</option>
+    <option value="Manzana">Manzana</option>
+    <option value="Naranja">Naranja</option>
+    <option value="Mandarina">Mandarina</option>
+</select>
+
+
+    <!-- Botón en el HTML -->
+    <button id="miBoton">Haz clic aquí</button>
+    <!-- Script que se ejecuta después de que se carga el botón -->
+    <script>
+        function mostrarMensaje() {
+            alert("¡Hola, me da gusto conocerte!");
+        }
+        const boton = document.getElementById("miBoton");
+        boton.addEventListener("click", mostrarMensaje);
+    </script>
+
+    <button id="miBoton">Puchale aqui</button>
+
+    <script>
+        const button = document.getElementById("miBoton");
+        button.addEventListener("click", function(event) {
+            console.log(event); // Muestra detalles del evento click en la consola
+        });
+    </script>
+</body>
+</html>

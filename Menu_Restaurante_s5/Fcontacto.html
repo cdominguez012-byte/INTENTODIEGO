@@ -1,0 +1,63 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formulario de Contacto</title>
+    <!-- Bootstrap CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        input {
+        margin-bottom: 15px;
+        }
+    </style>
+    </head>
+    <body class="container mt-5">
+
+    <h2>Formulario de Contacto</h2>
+
+    <form>
+        <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre">
+        </div>
+
+        <div class="form-group">
+        <label for="correo">Correo:</label>
+        <input type="email" class="form-control" id="correo" name="correo" placeholder="tu@email.com">
+        </div>
+
+        <div class="form-group">
+        <label for="mensaje">Mensaje:</label>
+        <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu mensaje"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+    </form>
+
+    <button onclick="personalizarFormulario()" class="btn btn-secondary mt-4">Personalizar Estilos</button>
+
+    <script>
+        function personalizarFormulario() {
+        // 1. Usar querySelector para cambiar el fondo del primer campo de texto
+        const primerInput = document.querySelector("input");
+        primerInput.classList.add("bg-success");
+
+        const segundoInput = document.querySelector("Textarea");
+        segundoInput.classList.add("bg-primary");
+
+        // 2. Usar querySelectorAll para aplicar btn-danger a todos los botones
+        const botones = document.querySelectorAll("button");
+        botones.forEach(boton => {
+            boton.classList.remove("btn-primary", "btn-secondary"); // Eliminar clases anteriores si las hay
+            boton.classList.add("btn-danger");
+        });
+
+        // 3. Usar getElementsByName para cambiar el color del texto del campo nombre
+        const campoNombre = document.getElementsByName("nombre");
+        campoNombre.classList.add("text-danger");
+        }
+    </script>
+
+    </body>
+    </html>

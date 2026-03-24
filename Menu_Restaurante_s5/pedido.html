@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+    <h1 class="mb-4">Realiza tu pedido</h1>
+
+    <form>
+    <!-- Nombre del usuario -->
+    <div class="bg-dark m-3 p-1"><!-- CAmbio -->
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre">
+    </div>  
+   
+    <!-- Entrada -->
+    <div class="border border-dark mt-3 p-3 rounded-pill"><!-- CAmbio -->
+        <label for="entrada" class="form-label">Entrada</label>
+        <select class="form-select" id="entrada">
+    <option selected disabled>Selecciona una opción</option>
+    <option>Ensalada César</option>
+    <option>Sopa del día</option>
+    <option>Bruschetta</option>
+        </select>
+    </div>
+
+    <!-- Comida principal -->
+    <div class="mb-3">
+    
+        <label for="comida" class="form-label">Plato Fuerte</label>
+        <select class="form-select" id="comida">
+    <option selected disabled>Selecciona una opción</option>
+    <option>Lomo Salteado</option>
+    <option>Pollo a la brasa</option>
+    <option>Hamburguesa vegana</option>
+        </select>
+    </div>
+
+    <!-- Postre -->
+    <div class="mb-3">
+        <label for="postre" class="form-label">Postre</label>
+        <select class="form-select" id="postre">
+    <option selected disabled>Selecciona una opción</option>
+    <option>Helado Artesanal</option>
+    <option>Tarta de queso</option>
+    <option>Brownie</option>
+        </select>
+    </div>
+
+        <!-- Tipo de comida (radio buttons) -->
+    <div class="mb-3">
+        <label class="form-label">Tipo de comida</label>
+        <div class="form-check">
+    <input class="form-check-input" type="radio" name="tipoComida" id="normal" value="Normal">
+    <label class="form-check-label" for="normal">Normal</label>
+        </div>
+        <div class="form-check">
+    <input class="form-check-input" type="radio" name="tipoComida" id="vegetariana" value="Vegetariana">
+    <label class="form-check-label" for="vegetariana">Vegetariana</label>
+        </div>
+        <div class="form-check">
+    <input class="form-check-input" type="radio" name="tipoComida" id="vegana" value="Vegana">
+    <label class="form-check-label" for="vegana">Vegana</label>
+        </div>
+    </div>
+
+<!-- Complementos adicionales (checkboxes) -->
+<div class="mb-3">
+        <label class="form-label">Complementos adicionales</label>
+        <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Pan" id="pan">
+    <label class="form-check-label" for="pan">Pan</label>
+        </div>
+        <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Salsa extra" id="salsa">
+    <label class="form-check-label" for="salsa">Salsa extra</label>
+        </div>
+        <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Bebida" id="bebida">
+    <label class="form-check-label" for="bebida">Bebida</label>
+        </div>
+</div>
+
+<!-- Instrucciones específicas -->
+    <div class="mb-3">
+        <label for="instrucciones" class="form-label">Instrucciones específicas</label>
+        <textarea class="form-control" id="instrucciones" rows="4" placeholder="Escribe aquí tus instrucciones..."></textarea>
+    </div>
+
+    <!-- Botón de envío -->
+    <button type="submit" class="btn btn-primary">Enviar Pedido</button>
+    </form>
+</div>
+
+<a href="menu_bootstrap.html"><button class="btn btn-info">Regresa a nuestro menú del Restaurant</button></a>
+<a href="bar.html"><button class="btn btn-secondary">Visita nuestro bar</button></a>
+
+
+<script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

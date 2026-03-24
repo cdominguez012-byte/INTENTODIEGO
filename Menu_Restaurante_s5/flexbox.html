@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Proyecto Flex con Bootstrap</title>
+        <!-- Enlace a Bootstrap 5 -->
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        </head>
+        <body>
+
+        <!-- Encabezado -->
+        <header class="bg-primary text-white text-center py-4">
+        <h1>Mi Proyecto con Bootstrap y Flexbox</h1>
+        </header>
+
+        <!-- Contenedor principal -->
+        <div class="container my-5">
+
+        <!-- Sección con 3 columnas (cada una con un párrafo) -->
+        <div class="d-flex justify-content-between flex-wrap gap-3">
+        <div class="flex-fill bg-info p-3 border rounded" style="min-width: 250px;">
+        <h4>Columna 1</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
+        </div>
+        <div class="flex-fill bg-secundary p-3 border rounded" style="min-width: 250px;">
+        <h4>Columna 2</h4>
+        <p>Curabitur pretium, ipsum at cursus commodo, turpis sapien fermentum justo.</p>
+        </div>
+        <div class="flex-fill bg-warning p-3 border rounded" style="min-width: 250px;">
+        <h4>Columna 3</h4>
+        <p>Maecenas quis lorem nec velit egestas iaculis nec a nunc.</p>
+        </div>
+        </div>
+
+        <!-- Espacio -->
+        <hr class="my-5">
+
+        <!-- Sección con 4 botones distribuidos horizontalmente -->
+        <div class="d-flex justify-content-around flex-wrap gap-3">
+        <button class="btn btn-info">Botón 1</button>
+        <button class="btn btn-primary">Botón 2</button>
+        <button class="btn btn-danger">Botón 3</button>
+        <button class="btn btn-info">Botón 4</button>
+        </div>
+
+        </div>
+
+        <!-- JS de Bootstrap (opcional si necesitas componentes interactivos) -->
+        <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+    <meta charset="UTF-8">
+    <title>Galería de Productos</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .producto {
+        max-width: 300px;
+        margin: 20px auto;
+        }
+
+        .descripcion.oculto {
+        display: none;
+        }
+    </style>
+    </head>
+    <body>
+
+    <div class="container mt-5">
+        <div class="card producto" id="productoCard">
+        <img src="img/camara.jpg" class="card-img-top" alt="Producto">
+        <div class="card-body">
+            <h5 class="card-title" id="tituloProducto">Cámara Fotográfica</h5>
+            <p class="card-text" id="precioProducto">$299.99</p>
+            <p class="card-text descripcion" id="descripcionProducto">Alta resolución, ideal para viajes y aventuras.</p>
+            <p class="text-success fw-bold" id="estadoSeleccion"></p>
+
+            <div class="d-flex justify-content-between mt-3">
+            <button class="btn btn-primary" id="btnSeleccionar">Seleccionar</button>
+            <button class="btn btn-danger" id="btnRetirar">Retirar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script src="script3.js"></script>
+    </body>
+    </html>

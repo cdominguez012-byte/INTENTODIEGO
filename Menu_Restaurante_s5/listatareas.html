@@ -1,0 +1,76 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+    <meta charset="UTF-8">
+    <title>Lista de Tareas</title>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        }
+        ul {
+        list-style-type: disc;
+        margin-bottom: 20px;
+        }
+        li {
+        margin: 5px 0;
+        }
+        input {
+        padding: 5px;
+        margin-right: 10px;
+        }
+    </style>
+    </head>
+    <body>
+
+    <h2>Lista de Tareas</h2>
+
+    <!-- Lista de tareas -->
+    <ul id="listaTareas">
+        <li id="tarea1">Estudiar JavaScript</li>
+        <li id="tarea2">Practicar ejercicios</li>
+        <li id="tarea3">Leer documentación</li>
+    </ul>
+
+    <!-- Botón para eliminar la primera tarea -->
+    <button id="btnEliminar">Eliminar primera tarea</button>
+
+    <br><br>
+
+    <!-- Campo de texto y botón para agregar nueva tarea -->
+    <input type="text" id="nuevaTarea" placeholder="Escribe una nueva tarea">
+    <button id="btnAgregar">Agregar tarea</button>
+
+    <script>
+        // Seleccionar elementos
+        const btnEliminar = document.getElementById('btnEliminar');
+        const btnAgregar = document.getElementById('btnAgregar');
+        const lista = document.getElementById('listaTareas');
+        const inputTarea = document.getElementById('nuevaTarea');
+
+        // Evento para eliminar el primer elemento de la lista
+        btnEliminar.addEventListener('click', () => {
+        const primerElemento = lista.querySelector('li');
+        if (primerElemento) {
+            primerElemento.remove();
+        } else {
+            alert("No hay tareas para eliminar.");
+        }
+        });
+
+        // Evento para agregar una nueva tarea
+        btnAgregar.addEventListener('click', () => {
+        const texto = inputTarea.value.trim();
+        if (texto !== "") {
+            const nuevaLi = document.createElement('li');
+            nuevaLi.textContent = texto;
+            lista.appendChild(nuevaLi);
+            inputTarea.value = ""; // Limpiar input
+        } else {
+            alert("Que parte de...escribe una tarea no entediste");
+        }
+        });
+    </script>
+
+    </body>
+    </html>

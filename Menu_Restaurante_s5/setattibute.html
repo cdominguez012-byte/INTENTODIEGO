@@ -1,0 +1,32 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+    <meta charset="UTF-8">
+    <title>Alternar Imagen</title>
+    </head>
+    <body>
+
+    <!-- Card con imagen -->
+    <div id="miCard">
+        <h2>Mi tarjeta</h2>
+        <img id="imagenCard" src="img/Audifonos.webp" alt="Imagen de ejemplo" width="200">
+    </div>
+
+    <!-- Botón para cambiar la imagen -->
+    <button onclick="alternarImagen()">Cambiar Imagen</button>
+
+    <script>
+        function alternarImagen() {
+        const imagen = document.getElementById('imagenCard');
+        const imagenActual = imagen.getAttribute('src');
+
+        if (imagenActual === "img/Audifonos.webp") {
+            imagen.setAttribute('src', 'img/camara.jpg');
+        } else {
+            imagen.setAttribute('src', 'img/audifonos.webp');
+        }
+        }
+    </script>
+
+    </body>
+    </html>

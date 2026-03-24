@@ -1,0 +1,205 @@
+    <!doctype html>
+    <html lang="es">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Netflix-like UI - Demo</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.5/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        /* --- General styling to emulate Netflix-ish look --- */
+        :root{
+        --net-red: #e50914;
+        --bg-dark: #141414;
+        --muted: #b3b3b3;
+        }
+        body{
+        background: linear-gradient(180deg,#000 0%, #0b0b0b 100%);
+        color: #fff;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        }
+        /* Navbar */
+        .navbar-net{
+        background: rgba(20,20,20,0.85);
+        backdrop-filter: blur(6px);
+        }
+        .brand-net{
+        color: var(--net-red);
+        font-weight: 800;
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+        }
+        .nav-link{
+        color: #e6e6e6 !important;
+        }
+
+        /* Hero banner */
+        .hero{
+        position: relative;
+        min-height: 62vh;
+        display: flex;
+        align-items: flex-end;
+        padding: 4rem 2rem;
+        background-size: cover;
+        background-position: center;
+        border-bottom: 8px solid rgba(255,255,255,0.03);
+        }
+        .hero::after{
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(0,0,0,0.45) 20%, rgba(0,0,0,0.85) 65%);
+        }
+        .hero-content{
+        position: relative;
+        z-index: 2;
+        max-width: 1100px;
+        }
+        .hero h1{ font-size: clamp(1.8rem, 4vw, 3.2rem); margin-bottom: .75rem; }
+        .hero p{ color: var(--muted); max-width: 60%; }
+
+        /* Cards */
+        .movie-card{
+        background: transparent;
+        border: 0;
+        }
+        .poster{
+        border-radius: 6px;
+        overflow: hidden;
+        transition: transform .25s ease, box-shadow .25s ease;
+        }
+        .poster img{ display:block; width:100%; height:auto; }
+        .poster:hover{ transform: scale(1.06); box-shadow: 0 8px 30px rgba(0,0,0,0.6); }
+        .badge-rating{
+        position: absolute; top: .6rem; left: .6rem; background: rgba(0,0,0,0.6);
+        padding: .25rem .5rem; border-radius: 4px; font-weight:700; font-size:.85rem;
+        }
+
+        footer{ padding: 3rem 0; color: #777; }
+
+        @media (max-width: 767px){
+        .hero p{ max-width: 100%; }
+        }
+    </style>
+    </head>
+    <body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-net fixed-top">
+        <div class="container-fluid px-4">
+        <a class="navbar-brand brand-net" href="#">NETFLIX</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-3">
+            <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Series</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Películas</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Novedades</a></li>
+            </ul>
+
+            <form class="d-flex me-3" role="search">
+            <input class="form-control form-control-sm bg-dark text-white border-0" type="search" placeholder="Buscar" aria-label="Search">
+            </form>
+            <div class="d-flex align-items-center gap-3">
+            <button class="btn btn-sm btn-outline-secondary">Niños</button>
+            <img src="https://i.pravatar.cc/36" alt="avatar" class="rounded" style="width:36px;height:36px;object-fit:cover;">
+            </div>
+        </div>
+        </div>
+    </nav>
+
+    <!-- HERO / BANNER PRINCIPAL -->
+    <header class="hero" style="background-image: url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=1600&q=60'); margin-top:56px;">
+        <div class="container hero-content">
+        <h1>Película destacada</h1>
+        <p>Disfruta de la selección recomendada para ti. Añade esta tarjeta a tu lista y comienza a mirar ahora.</p>
+        <div class="mt-3">
+            <a href="#" class="btn btn-lg btn-dark me-2" style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.08); color:#fff;"><i class="bi bi-play-fill me-2"></i>Reproducir</a>
+            <a href="#" class="btn btn-outline-light btn-lg"><i class="bi bi-plus-lg me-2"></i>Mi lista</a>
+        </div>
+        </div>
+    </header>
+
+    <!-- MOVIE ROWS -->
+    <main class="container-fluid px-4 py-5">
+        <section class="mb-5">
+        <h4 class="mb-3">Tendencias</h4>
+        <div class="row g-3">
+            <!-- Repeat these movie cards -->
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <div class="movie-card position-relative">
+                <div class="poster position-relative">
+                <span class="badge-rating">8.3</span>
+                <img src="img/STRANGER THINGS.jpg" alt="poster">
+                </div>
+                <div class="mt-2 small text-muted">STRANGER THINGS</div>
+            </div>
+            </div>
+
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <div class="movie-card position-relative">
+                <div class="poster position-relative">
+                <span class="badge-rating">7.9</span>
+                <img src="img/DARK.jpg" alt="poster">
+                </div>
+                <div class="mt-2 small text-muted">DARK</div>
+            </div>
+            </div>
+
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <div class="movie-card position-relative">
+                <div class="poster position-relative">
+                <span class="badge-rating">9.1</span>
+                <img src="IMG/ROOM 999.jpg" alt="poster">
+                </div>
+                <div class="mt-2 small text-muted">ROOM 999</div>
+            </div>
+            </div>
+
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 d-none d-md-block">
+            <div class="movie-card position-relative">
+                <div class="poster position-relative">
+                <span class="badge-rating">6.8</span>
+                <img src="IMG/ARQ.jpg" alt="poster">
+                </div>
+                <div class="mt-2 small text-muted">ARQ</div>
+            </div>
+            </div>
+
+            <!-- add more cards as needed -->
+        </div>
+        </section>
+
+        <!-- Another row example -->
+        <section>
+        <h4 class="mb-3">Nuevos lanzamientos</h4>
+        <div class="row g-3">
+            <!-- Cards duplicated for demo -->
+            <!-- ... -->
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <div class="movie-card position-relative">
+                <div class="poster position-relative">
+                <span class="badge-rating">8.0</span>
+                <img src="IMG/spiderhead-poster-netflix.jpg" alt="poster">
+                </div>
+                <div class="mt-2 small text-muted">SPIDERHEAD</div>
+            </div>
+            </div>
+
+        </div>
+        </section>
+    </main>
+
+    <footer class="container text-center">
+        <p class="small">Demo de interfaz estilo "Netflix" — uso educativo. Imágenes de placeholder.</p>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
